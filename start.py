@@ -42,15 +42,25 @@ with sr.Microphone() as s:
                 if (variavelnome == 'visual studio code') :
                     print("abrindo visual sutdio code")
                     variavelnome = '/opt/visual-studio-code/code'
-                if variavelnome == 'steam':
+                elif variavelnome == 'steam':
                     print("abrindo steam-runtime")
                     variavelnome = '/usr/bin/steam-runtime %U'
-                if variavelnome == 'android studio':
+                elif variavelnome == 'android studio':
                     print("Abrindo androidstudio")
                     variavelnome = '~/android-studio/bin/studio.sh'
-                if variavelnome == 'google chrome':# or 'chrome':
+                elif variavelnome == 'google chrome':# or 'chrome':
                     print("abrindo chrome")
                     variavelnome = 'google-chrome-stable'
+                elif variavelnome == 'spotify':
+                    print("abrindo spotify")
+                    try:
+                        #OPEN FLATPAK SPOTIFY
+                        os.system('/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=spotify --file-forwarding com.spotify.Client @@u %U @@')   
+                        print("taqui")
+                    except:
+                        #SPOTIFY ON usr/bin
+                        variavelnome = 'spotify'    
+
 
                 #if variavelnome == 'sublime' or 'sublime text 3' or 'sublime text': #or 'sublime text 3' or 'sublime':
                 #    variavelnome = '/usr/bin/subl3'  
