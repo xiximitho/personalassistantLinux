@@ -2,24 +2,24 @@
 
 #importando os modulos do chatbot
 
-from chatterbot.trainers import ListTrainer
-from chatterbot import ChatBot
+#from chatterbot.trainers import ListTrainer
+#from chatterbot import ChatBot
 import re
 import os
 import speech_recognition as sr
-from threading import Thread
-import pyttsx3
-import gtts
+#from threading import Thread
+#import pyttsx3
+#import gtts
 
-speaker = pyttsx3.init()
+#speaker = pyttsx3.init()
 
-def speak(text):
-    
-    speaker.say(text)
-    speaker.runAndWait()
+#def speak(text):
+#    
+#    speaker.say(text)
+#    speaker.runAndWait()
 
 
-bot = ChatBot('Bot_teste',read_only=True)
+#bot = ChatBot('Bot_teste',read_only=True)
 
 r = sr.Recognizer()
 
