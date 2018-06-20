@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 #-*- coding: utf-8 -*-
 
 #from chatterbot.trainers import ListTrainer
@@ -16,7 +18,7 @@ speaker = pyttsx3.init()
 
 def criarvoz(text,lang,filename):
     file = gTTS(text = text, lang=lang)
-    filenamez = './voz/'+str(filename)
+    filenamez = '/usr/tmp/'+str(filename)
     file.save(filenamez)
 
 def speak(text):
@@ -38,12 +40,12 @@ with sr.Microphone() as s:
             falainicial = r.listen(s)
             fala = r.recognize_google(falainicial, language='pt')
             fala = fala.lower()
-            if fala == 'zara':
-                player = vlc.MediaPlayer("./voz/util.mp3")
+            if fala == 'lara':
+                player = vlc.MediaPlayer("/usr/tmp/util.mp3")
                 #mixer.music.play()
                 player.play()
+                #time.sleep(4)
                # speak('Em que posso lhe ser útil')
-                time.sleep(1)
                 try:
                     variavelnome = ''
                     audio = r.listen(s)
@@ -75,7 +77,7 @@ with sr.Microphone() as s:
                             try:
                                 #OPEN FLATPAK SPOTIFY
                                 os.system('/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=spotify --file-forwarding com.spotify.Client @@u %U @@ &')   
-                                print("taqui")
+                                print("Abriu spotify via flatpak")
                             except:
                                 #SPOTIFY ON usr/bin
                                 variavelnome = 'spotify'    
@@ -97,11 +99,11 @@ with sr.Microphone() as s:
 
 
                 except:
-                    print(".")        
+                    print("..")        
     
         
         except:
-            print("samanta inativa")    
+            print("Lara inativa")    
 
 
 # TREINAR FALAS BOT
