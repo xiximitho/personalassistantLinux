@@ -5,6 +5,7 @@
 # Install Depends
 
 you'll need libespeak1 -- in ubuntu/deb: sudo apt install libespeak1 
+
 you'll also need portaudio19-dev -- in ubuntu/deb: sudo apt install portaudio19-dev  (depends on pyaudio)
 
 
