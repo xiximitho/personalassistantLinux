@@ -40,15 +40,19 @@ with sr.Microphone() as s:
             falainicial = r.listen(s)
             fala = r.recognize_google(falainicial, language='pt')
             fala = fala.lower()
+            print(fala)
             if fala == 'lara':
-                player = vlc.MediaPlayer("/usr/tmp/util.mp3")
+                player = vlc.MediaPlayer("voz/util.mp3")
+                
                 #mixer.music.play()
                 player.play()
-                #time.sleep(4)
+                time.sleep(0.5)
                # speak('Em que posso lhe ser útil')
                 try:
                     variavelnome = ''
+                    time.sleep(0.5)
                     audio = r.listen(s)
+
                     speech = r.recognize_google(audio, language='pt')
                     print('Você disse: ',speech)
 
